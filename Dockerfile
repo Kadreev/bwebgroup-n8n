@@ -25,8 +25,6 @@ RUN addgroup -S pptruser && adduser -S -G pptruser pptruser \
     && chown -R pptruser:pptruser /home/pptruser \
     && chown -R pptruser:pptruser /app
 
-# Run everything after as non-privileged user.
-USER pptruser
 
 # pass N8N_VERSION Argument while building or use default
 ARG N8N_VERSION=0.188.0
@@ -54,3 +52,4 @@ RUN chmod +x /start.sh
 
 # define execution entrypoint
 CMD ["/start.sh"]
+USER pptruser
