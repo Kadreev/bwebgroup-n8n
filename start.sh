@@ -1,5 +1,6 @@
 #!/bin/sh
-
+export N8N_USER_FOLDER=/home/root/n8n
+export N8N_CUSTOM_EXTENSIONS="/home/root/n8n/custom-nodes;/home/root/n8n/custom"
 # check if port variable is set or go with default
 if [ -z ${PORT+x} ]; then echo "PORT variable not defined, leaving N8N to default port."; else export N8N_PORT=$PORT; echo "N8N will start on '$PORT'"; fi
 
