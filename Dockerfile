@@ -14,7 +14,7 @@ RUN mkdir -p /home/root/n8n && \
 # Install n8n and the also temporary all the packages
 # it needs to build it correctly.
 RUN apk --update add --virtual build-dependencies python3 build-base && \
-	npm_config_user=root npm install -g n8n@${N8N_VERSION} n8n-nodes-gravityforms n8n-nodes-browserless && \
+	npm_config_user=root npm install -g n8n-nodes-gravityforms n8n-nodes-browserless n8n@${N8N_VERSION} && \
 	apk del build-dependencies
 RUN npm list
 RUN npm list -g
