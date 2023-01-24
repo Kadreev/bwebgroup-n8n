@@ -10,13 +10,14 @@ RUN apk add --update graphicsmagick tzdata
 USER root
 RUN mkdir -p /home/root/n8n && \
     chown root:root /home/root/n8n
-RUN npm_config_user=root npm install n8n-nodes-gravityforms n8n-nodes-browserless
+
 # Install n8n and the also temporary all the packages
 # it needs to build it correctly.
 RUN apk --update add --virtual build-dependencies python3 build-base && \
 	npm_config_user=root npm install -g n8n@${N8N_VERSION} n8n-nodes-gravityforms n8n-nodes-browserless && \
 	apk del build-dependencies
-
+RUN npm list
+RUN npm list -g
 # Specifying work directory
 WORKDIR /data
 
