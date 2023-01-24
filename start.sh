@@ -58,7 +58,5 @@ then
 else
 	echo "invalid url arg"
 fi
-export N8N_CUSTOM_EXTENSIONS="/home/jim/n8n/custom-nodes;/data/n8n/nodes"
-
 # kickstart nodemation
 n8n
